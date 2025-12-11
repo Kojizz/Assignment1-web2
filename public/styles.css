@@ -1,0 +1,84 @@
+/* Advanced styles for BMI Calculator front-end */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-font-smoothing:antialiased;
+  min-height: 100vh;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page { width: 100%; max-width: 1100px; }
+.header { margin-bottom: 20px; color: #fff; text-align: left; }
+.header .header-inner { background: transparent; margin-bottom: 8px; }
+.header h1 { font-size: 1.8rem; margin-bottom: 6px; }
+.subtitle { color: #eef2ff; opacity: 0.95; }
+
+.grid { display: grid; gap: 20px; grid-template-columns: 1fr; align-items: start; }
+@media(min-width:900px) { .grid { grid-template-columns: 480px 1fr; } }
+
+.card { background: #fff; border-radius: 12px; padding: 22px; box-shadow: 0 12px 30px rgba(2,6,23,0.25); }
+.form-card h2, .result-card h2 { margin-bottom: 12px; color: #222; }
+
+.form-row { margin-bottom: 14px; }
+.label { display:block; font-weight:700; margin-bottom:8px; color:#333; }
+input[type="number"], .unit-toggle label { width: 100%; }
+input[type="number"] { width: 100%; padding: 12px 14px; border: 1px solid #e6e9f2; border-radius: 8px; font-size: 1rem; }
+input[type="number"]:focus { outline: none; box-shadow: 0 6px 18px rgba(102,126,234,0.12); border-color: #667eea; }
+
+.unit-toggle { display:flex; gap:10px; }
+.unit-toggle label { display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:8px; background:#f6f8ff; border:1px solid #eef2ff; cursor:pointer; font-weight:600; }
+.unit-toggle input { accent-color:#667eea; }
+
+.form-actions { display:flex; gap:10px; margin-top:6px; }
+.btn { padding: 12px 16px; background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:700; }
+.btn[disabled] { opacity:0.6; cursor:not-allowed; }
+.btn-ghost { background:transparent; color:#667eea; border:1px solid #e8ecff; }
+
+.help { font-size:0.86rem; color:#667; margin-top:6px; }
+
+.result-card { min-height:220px; display:flex; align-items:flex-start; flex-direction:column; justify-content:flex-start; }
+.result-inner { width:100%; }
+.result-value { display:flex; align-items:center; gap:18px; margin-bottom:12px; }
+.bmi-label { font-weight:700; color:#666; }
+.bmi-value { font-size:2.8rem; font-weight:800; color:#333; }
+.category { font-size:1.1rem; font-weight:700; color:#333; }
+
+.message { padding:10px 12px; border-radius:8px; background: #f6f8ff; margin-bottom:12px; border-left:4px solid #667eea; }
+
+.detail-list { background:#fbfdff; padding:10px; border-radius:8px; margin-bottom:12px; }
+.detail-item { display:flex; justify-content:space-between; padding:6px 0; }
+.detail-label { color:#333; font-weight:700; }
+.detail-value { color:#555; }
+
+.history { margin-top:6px; }
+.history-list { list-style:none; margin-top:8px; padding-left:0; max-height:120px; overflow:auto; }
+.history-item { padding:6px 8px; border-radius:6px; background:#f5f7ff; margin-bottom:6px; font-size:0.95rem; }
+
+.result-actions { margin-top:12px; display:flex; gap:8px; }
+
+/* Category color helpers */
+.underweight { --result-color: #3498db; --result-rgb: 52,152,219; }
+.normal { --result-color: #27ae60; --result-rgb: 39,174,96; }
+.overweight { --result-color: #f39c12; --result-rgb: 243,156,18; }
+.obese { --result-color: #e74c3c; --result-rgb: 231,76,60; }
+
+.result-card.underweight .bmi-value, .result-card.underweight .category { color:var(--result-color); }
+.result-card.normal .bmi-value, .result-card.normal .category { color:var(--result-color); }
+.result-card.overweight .bmi-value, .result-card.overweight .category { color:var(--result-color); }
+.result-card.obese .bmi-value, .result-card.obese .category { color:var(--result-color); }
+
+/* Footer */
+.footer { margin-top:18px; color:#eaf0ff; text-align:center; }
+
+/* small screens tweaks */
+@media(max-width:480px) {
+  .bmi-value { font-size:2rem; }
+  .grid { gap:14px; }
+}
+

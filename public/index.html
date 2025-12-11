@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <div class="header-inner">
+          <h1>📊 BMI Calculator</h1>
+          <p class="subtitle">Enter your measurements and get instant feedback</p>
+        </div>
+      </header>
+
+      <section class="grid" aria-labelledby="calculator-heading">
+        <div class="card form-card">
+          <h2 id="calculator-heading">Calculator</h2>
+          <form id="bmi-form" novalidate>
+            <div class="form-row">
+              <label class="label">Unit System</label>
+              <div class="unit-toggle" role="radiogroup" aria-label="Unit system">
+                <label><input type="radio" name="units" value="metric" checked> Metric (kg / m)</label>
+                <label><input type="radio" name="units" value="imperial"> Imperial (lb / in)</label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="weight">Weight</label>
+              <input id="weight" name="weight" inputmode="decimal" type="number" step="0.1" placeholder="e.g. 70" required aria-describedby="weight-help" />
+              <div id="weight-help" class="help">kg (metric) or lb (imperial)</div>
+            </div>
+
+            <div class="form-row">
+              <label for="height">Height</label>
+              <input id="height" name="height" inputmode="decimal" type="number" step="0.01" placeholder="e.g. 1.75" required aria-describedby="height-help" />
+              <div id="height-help" class="help">meters (metric) or inches (imperial)</div>
+            </div>
+
+            <div class="form-actions">
+              <button id="calculate" class="btn" type="submit">Calculate BMI</button>
+              <button id="reset" type="button" class="btn btn-ghost">Reset</button>
+            </div>
+          </form>
+
+          <div class="info">
+            <h3>BMI Categories</h3>
+            <div class="info-item"><strong class="cat underweight">Underweight:</strong> BMI &lt; 18.5</div>
+            <div class="info-item"><strong class="cat normal">Normal Weight:</strong> 18.5 ≤ BMI &lt; 24.9</div>
+            <div class="info-item"><strong class="cat overweight">Overweight:</strong> 25 ≤ BMI &lt; 29.9</div>
+            <div class="info-item"><strong class="cat obese">Obese:</strong> BMI ≥ 30</div>
+          </div>
+        </div>
+
+        <aside id="result" class="card result-card" aria-live="polite" hidden>
+          <div class="result-inner">
+            <h2 id="result-title">Your Result</h2>
+            <div class="result-value">
+              <div class="bmi-label">BMI</div>
+              <div id="bmi-value" class="bmi-value">—</div>
+              <div id="bmi-category" class="category">—</div>
+            </div>
+            <div id="bmi-message" class="message">Enter your details and press Calculate.</div>
+
+            <div class="detail-list">
+              <div class="detail-item"><span class="detail-label">Weight:</span><span id="detail-weight" class="detail-value">—</span></div>
+              <div class="detail-item"><span class="detail-label">Height:</span><span id="detail-height" class="detail-value">—</span></div>
+            </div>
+
+            <div class="history">
+              <h3>Recent Results</h3>
+              <ul id="history-list" class="history-list"></ul>
+            </div>
+
+            <div class="result-actions">
+              <button id="again" class="btn btn-ghost">Calculate Again</button>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="footer">
+        <small>Units: Metric (kg, m) or Imperial (lb, in). For accuracy enter height in meters (e.g. 1.75) or inches (e.g. 69).</small>
+      </footer>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
