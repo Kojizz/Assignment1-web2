@@ -7,20 +7,23 @@ This project demonstrates basic routing, handling HTTP GET/POST requests, input 
 
 ## Project Structure
 
-ASSIGNMENT1 WEB2/
- ├── node_modules/
+```
+ASSIGNMENT1_WEB2/
+ ├── src/
+ │    └── index.js
  ├── public/
- │    ├── app.js         ← front-end script (optional)
- │    ├── index.html     ← main HTML form
- │    ├── styles.css     ← UI styling
- ├── index.js            ← Express server + routing
+ │    └── style.css   (optional if you use inline CSS)
+ ├── node_modules/
  ├── package.json
  ├── package-lock.json
+```
 
+**Explanation:**
 
-* index.js – Main server file containing routes, HTML form, BMI logic
-* package.json – Project metadata and dependencies
-* node_modules – Installed dependencies (Express)
+* **src/index.js** – Main server file containing routes, HTML form, BMI logic
+* **public/style.css** – (Optional) external CSS file
+* **node_modules** – Installed dependencies (Express)
+* **package.json** – Project metadata and dependencies
 
 ---
 
@@ -49,17 +52,21 @@ Displays a simple HTML form where the user enters:
 Receives user input and:
 
 * Converts height to meters
+
 * Calculates BMI:
   [
   BMI = \frac{weight}{height^2}
   ]
+
 * Determines category:
 
   * Underweight – BMI < 18.5
   * Normal – 18.5–24.9
   * Overweight – 25–29.9
   * Obese – ≥ 30
+
 * Returns the result in a styled HTML response
+
 * Applies color-coded output:
 
   * 🟢 Normal
@@ -75,9 +82,9 @@ Receives user input and:
 
 ## Code Structure & Organization
 
-This project intentionally uses a simple, single-file structure to match assignment requirements.
+This project intentionally uses a simple structure to match assignment requirements.
 
-### index.js includes:
+### `src/index.js` includes:
 
 * Express server setup
 * Middleware (`express.urlencoded`)
@@ -86,7 +93,7 @@ This project intentionally uses a simple, single-file structure to match assignm
 * BMI calculation logic
 * Styled result output
 
-Even without templates or folders, the code follows clean structure and good practices.
+Clean structure even without templates or advanced folders.
 
 ---
 
@@ -105,28 +112,36 @@ Example design elements:
 * Green → Normal
 * Yellow → Overweight
 * Red → Obese
-* 
+
 ---
 
 ## To Run
 
 ### Install dependencies:
 
+```
 npm install
+```
 
 ### Start the server:
 
-node index.js
+```
+node src/index.js
+```
 
 ### Open in browser:
 
+```
 http://localhost:3000
+```
+
+---
 
 ## Technologies Used
 
 * Node.js
 * Express.js
-* HTML/CSS (inline)
+* HTML/CSS (inline or external)
 * JavaScript
 
 ---
@@ -142,4 +157,6 @@ This BMI Calculator demonstrates:
 * Validating user input
 * Returning styled results to the client
 
-It provides a strong foundation for more advanced Node.js and Express applications
+It provides a strong foundation for more advanced Node.js and Express applications.
+
+---
