@@ -10,7 +10,7 @@ This project demonstrates basic routing, handling HTTP GET/POST requests, input 
 ASSIGNMENT1 WEB2/
  ├── node_modules/
  ├── public/
- │    ├── app.js         ← front-end script 
+ │    ├── app.js         ← front-end script (optional)
  │    ├── index.html     ← main HTML form
  │    ├── styles.css     ← UI styling
  ├── index.js            ← Express server + routing
